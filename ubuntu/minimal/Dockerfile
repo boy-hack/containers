@@ -28,7 +28,7 @@ RUN curl -O https://cdn.azul.com/zulu/bin/zulu-repo_1.0.0-3_all.deb \
     && rm zulu-repo_1.0.0-3_all.deb
 
 ARG JDK8_VERSION="8.0.432-1"
-ARG JDK17_VERSION="17.0.13-1"
+ARG JDK17_VERSION="17.0.16-1"
 
 RUN apt-get update
 RUN apt-get install -y zulu8=$JDK8_VERSION zulu8-jre=$JDK8_VERSION zulu8-jre-headless=$JDK8_VERSION zulu8-jdk=$JDK8_VERSION \

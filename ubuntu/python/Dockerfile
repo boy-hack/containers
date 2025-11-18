@@ -1,10 +1,10 @@
 FROM databricksruntime/minimal:experimental
 
 ARG python_version="3.12"
-ARG pip_version="24.0"
+ARG pip_version="25.0.1"
 ARG setuptools_version="74.0.0"
-ARG wheel_version="0.38.4"
-ARG virtualenv_version="20.26.2"
+ARG wheel_version="0.45.1"
+ARG virtualenv_version="20.29.3"
 
 # Installs python and virtualenv for Spark and Notebooks
 RUN apt-get update \
@@ -38,4 +38,4 @@ RUN virtualenv --python=python${python_version} --system-site-packages /databric
 
 COPY python-lsp-requirements.txt /databricks/.
 
-RUN /databricks/python-lsp/bin/pip install -r /databricks/python-lsp-requirements.txt
+RUN /databricks/python-lsp/bin/pip install --no-deps -r /databricks/python-lsp-requirements.txt
